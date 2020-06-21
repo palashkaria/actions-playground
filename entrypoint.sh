@@ -68,8 +68,8 @@ DST_BRANCH="${DST_BRANCH:-master}"
 
 SRC_REPO="${GITHUB_REPOSITORY}${SRC_WIKI}"
 SRC_REPO_NAME="${GITHUB_REPOSITORY#*/}${SRC_WIKI}"
-DST_REPO="${DST_OWNER}/${DST_REPO_NAME}${DST_WIKI}"
-DST_REPO_NAME="${DST_REPO_NAME}${DST_WIKI}"
+DST_REPO="${GITHUB_REPOSITORY}${DST_WIKI}"
+DST_REPO_NAME="${GITHUB_REPOSITORY#*/}${DST_WIKI}"
 
 FINAL_SOURCE="${SRC_REPO_NAME}/${SRC_PATH}"
 
@@ -113,7 +113,7 @@ if [[ -n "$FILTER" ]]; then
     cd ..
 fi
 
-git clone --branch ${DST_BRANCH} --single-branch --depth 1 https://${PERSONAL_TOKEN}@github.com/${DST_REPO}.git
+git checkout ${DST_BRANCH} https://${PERSONAL_TOKEN}@github.com/${DST_REPO}.git
 if [ "$?" -ne 0 ]; then
     echo >&2 "Cloning branch '$DST_BRANCH' in '$DST_REPO' failed"
     echo >&2 "Falling back to default branch"
