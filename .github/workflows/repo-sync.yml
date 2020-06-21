@@ -1,8 +1,8 @@
 # File: .github/workflows/repo-sync.yml
 
 on:
-  push:
-    branches: [master]
+  schedule:
+    - cron: '*/15 * * * *'
 jobs:
   repo-sync-theianjones:
     runs-on: ubuntu-latest
