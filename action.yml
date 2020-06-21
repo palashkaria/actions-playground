@@ -1,5 +1,5 @@
-name: 'GitHub Repository Sync'
-author: 'Andre601'
+name: 'Backup Action'
+author: 'palashkaria'
 description: 'Allows updating a target repository when files change in another (optionally with folders defined)'
 
 inputs:
