@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '*/15 * * * *'
 jobs:
-  repo-sync:
+  repo-sync-theianjones:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -14,4 +14,15 @@ jobs:
           source_repo: 'theianjones/roam-research-themes'
           source_branch: 'master'
           destination_branch: 'theianjones/roam-research-themes'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  repo-sync-azlen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: repo-sync
+        uses: repo-sync/github-sync@v2
+        with:
+          source_repo: 'azlen/roam-themes'
+          source_branch: 'master'
+          destination_branch: 'azlen/roam-themes'
           github_token: ${{ secrets.GITHUB_TOKEN }}
