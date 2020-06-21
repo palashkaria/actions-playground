@@ -13,5 +13,5 @@ jobs:
         with:
           source_repo: 'theianjones/roam-research-themes'
           source_branch: 'master'
-          destination_branch: 'roam-research-themes'
+          destination_branch: 'theianjones/roam-research-themes'
           github_token: ${{ secrets.GITHUB_TOKEN }}
