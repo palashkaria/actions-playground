@@ -12,7 +12,7 @@ jobs:
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          src_path: /.
+          src_path: ./
           src_branch: roam-research-themes
           dst_path: /backup/roam-research-themes
           dst_owner: palashkaria
