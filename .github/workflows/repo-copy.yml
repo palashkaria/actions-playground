@@ -17,3 +17,4 @@ jobs:
           dst_path: /backup/roam-research-themes
           dst_owner: palashkaria
           dst_repo_name: actions-playground
+          dst_branch: backup
